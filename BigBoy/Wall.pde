@@ -1,4 +1,4 @@
-public class Wall implements Obstacle
+public class Wall extends AbstractObstacle
 {
   int x;
 }
