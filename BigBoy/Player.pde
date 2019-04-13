@@ -14,7 +14,10 @@ public class Player{
   public static final int PLAYER_X = 50;
   public static final int START_Y = 100;
   public static final int JUMP_VELOCITY = 10;
-  public static final int JUMP_ACCELERATION = 1;
+  public static final int ACCELERATION = -1;
+  public static final int FLOOR_3 = 300;
+  public static final int FLOOR_2 = 200;
+  public static final int FLOOR_1 = 100;
   
   public Player()
   {
@@ -28,14 +31,46 @@ public class Player{
    this.yAcc = 0;
   }
   
+  public void dispaly()
+  {
+    
+  }
+  
   public void jump()
   {
    if( notJump )
    {
+     notJump = false;
      yVel = JUMP_VELOCITY;
-     yAcc = JUMP_ACCELERATION;
-   }
+     yAcc = ACCELERATION;
+   }  
+  }
+  
+  public void drop()
+  {
+    if( notJump && level != 0 )
+    {
+      level--;
+      yAcc = ACCELERATION;
+      notJump = false;
+    }
+  }
+  
+  public void step()
+  {
+    int yTemp = y + yVel;
+    if( level == 0 )
+    {
+      if( yTemp <= FLOOR_2 || yTemp >= FLOOR_2 )
+      {
+        yAcc = 0;
+        notJump = true;
+        y = FLOOR_1;
+      }
+    }
     
+    y += yVel;
+    yVel += yAcc;
     
   }
   
