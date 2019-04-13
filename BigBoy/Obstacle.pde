@@ -1,11 +1,16 @@
 /**
  * An interface that outlines methods Obstacles must implement
  *
- * @author Jack Miller
+ * @author Jack M
  */
 public interface Obstacle
 {
-  void draw();
+  void display();
   void stepx();
+  
+  boolean checkCollision();
+  
+  int getLevel();
+  int getX();
  
 }
