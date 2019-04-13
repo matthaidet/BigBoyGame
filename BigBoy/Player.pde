@@ -6,27 +6,34 @@ public class Player{
   int x;
   int y;
   boolean notJump;
+  int level;
+  int yVel;
+  int yAcc;
   
   public static final int START_LIFE = 3;
   public static final int PLAYER_X = 50;
-  public static final int JUMP_TIME = 100;
+  public static final int START_Y = 100;
+  public static final int JUMP_VELOCITY = 10;
+  public static final int JUMP_ACCELERATION = 1;
   
   public Player()
   {
    this.life = START_LIFE;
    this.score = 0;
    this.x = PLAYER_X;
-   this.y = 0;
+   this.y = START_Y;
    this.notJump = true;
+   this.level = 1;
+   this.yVel = 0;
+   this.yacc = 0;
   }
   
   public void jump()
   {
-   if( y <= 3 && notJump )
+   if( notJump )
    {
-     y++
-     notJump = false;
-     wait(JUMP_TIME)
+     yVel = JUMP_VELOCITY;
+     yAcc = JUMP_ACCELERATION;
    }
     
     
