@@ -13,7 +13,7 @@ public interface Obstacle
   /**
    * Moves the object along the screen toward the player
    */
-  void stepx();
+  void stepX();
   
   /**
    * Checks whether or not the Obstacle has collided with another Obstacle
@@ -38,5 +38,4 @@ public interface Obstacle
    * @return The X location of the Obstacle
    */
   int getX();
- 
 }
