@@ -4,42 +4,17 @@
   2019
 */
 
-enum Frame {
-  MENU,
-  GAME,
-  END
-}
-
 PImage image;
-Game game;
-
-Frame currentFrame;
+Scene currentScene;
 
 void setup(){
   background(0);
   fullScreen();
-  currentFrame = Frame.MENU;
+  currentScene = new Menu();
 }
-
-void startGame(){
-  game = new Game();
-}
-
-
 
 // Main game loop
 void draw(){
- switch(currentFrame){
-  case MENU:
-    text("The Adventures of Big Boy", 100, 100);
-  break;
-    
-  case GAME:
-  
-  break;
-  
-  case END:
-  
-  break;
- }
+ background(0);
+ currentScene.display();
 }
