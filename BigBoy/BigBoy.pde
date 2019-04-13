@@ -18,3 +18,7 @@ void draw(){
  background(0);
  currentScene.display();
 }
+
+void mouseClicked(){
+ currentScene.click(); 
+}

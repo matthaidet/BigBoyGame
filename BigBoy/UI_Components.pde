@@ -18,17 +18,20 @@ public class Button{
     Uses the current mouse position to check if the button has been clicked
   */
   public boolean isHovered(){
-    return mouseX < x + width && mouseX > x && mouseY > y && mouseY < y + height;
+    return mouseX < x + width && mouseX > x && mouseY > y && mouseY < y + h;
   }
   
   public void display(){
     
     if(isHovered()){
-      stroke(255,0,0);
+      stroke(255,20,0);
+      fill(200,20,0);
     } else {
-      stroke(200, 0, 0); 
+      stroke(150, 100, 0);
+      fill(100,100,0);
     }
-    
+    textSize(50);
+    text(text,x,y);
     rect(x,y,w,h);
     
   }
