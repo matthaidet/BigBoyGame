@@ -1,5 +1,3 @@
-
-
 public class Player{
   int life;
   int score;
@@ -24,9 +22,13 @@ public class Player{
   {
    if( y <= 3 && notJump )
    {
-     y++
+     y++;
      notJump = false;
-     wait(JUMP_TIME)
+     try {
+       wait(JUMP_TIME);
+     } catch(Exception e){
+       //Do nothing
+     }
    }
     
     
