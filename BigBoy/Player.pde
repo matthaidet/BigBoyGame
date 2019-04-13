@@ -31,7 +31,7 @@ public class Player{
    this.yAcc = 0;
   }
   
-  public void dispaly()
+  public void display()
   {
     
   }
@@ -61,7 +61,7 @@ public class Player{
     int yTemp = y + yVel;
     if( level == 0 )
     {
-      if( yTemp <= FLOOR_2 || yTemp >= FLOOR_2 )
+      if( yTemp <= FLOOR_1 || yTemp >= FLOOR_2 )
       {
         yAcc = 0;
         notJump = true;
