@@ -15,9 +15,9 @@ public class Player{
   public static final int START_Y = 100;
   public static final int JUMP_VELOCITY = 10;
   public static final int ACCELERATION = -1;
-  public static final int FLOOR_3 = 300;
-  public static final int FLOOR_2 = 200;
-  public static final int FLOOR_1 = 100;
+  public static final int FLOOR_2 = 300;
+  public static final int FLOOR_1 = 200;
+  public static final int FLOOR_0 = 100;
   
   public Player()
   {
@@ -40,6 +40,10 @@ public class Player{
   {
    if( notJump )
    {
+     if( level < 2 )
+     {
+       level++;
+     }
      notJump = false;
      yVel = JUMP_VELOCITY;
      yAcc = ACCELERATION;
@@ -61,16 +65,35 @@ public class Player{
     int yTemp = y + yVel;
     if( level == 0 )
     {
-      if( yTemp <= FLOOR_1 || yTemp >= FLOOR_2 )
+      if( yTemp <= FLOOR_0 )
       {
         yAcc = 0;
+        yVel = 0;
+        notJump = true;
+        y = FLOOR_0;
+      }
+    } else if( level == 1 ) 
+    {
+      if( yTemp <= FLOOR_1 )
+      {
+        yAcc = 0;
+        yVel = 0;
         notJump = true;
         y = FLOOR_1;
       }
+    } else if( level == 2 )
+    {
+      if( yTemp <= FLOOR_2 )
+      {
+        yAcc = 0;
+        yVel = 0;
+        notJump = true;
+        y = FLOOR_2;
+      }
+    } else {
+      y += yVel;
+      yVel += yAcc;
     }
-    
-    y += yVel;
-    yVel += yAcc;
     
   }
   
