@@ -11,6 +11,7 @@ enum Frame {
 }
 
 PImage image;
+Game game;
 
 Frame currentFrame;
 
@@ -20,14 +21,19 @@ void setup(){
   currentFrame = Frame.MENU;
 }
 
+void startGame(){
+  game = new Game();
+}
+
+
 
 // Main game loop
 void draw(){
  switch(currentFrame){
   case MENU:
-    
+    text("The Adventures of Big Boy", 100, 100);
   break;
-  
+    
   case GAME:
   
   break;
