@@ -40,8 +40,8 @@ public class Menu extends Scene{
   PFont font;
   
   public Menu(){
-    startButton = new Button(width/2,10,100,50,null,"Start");
-    helpButton = new Button(width/2,200,100,50,null,"Help");
+    startButton = new Button(width/2,height/2,width/25,height/20,null,"Start");
+    helpButton = new Button(width/2,height/2+height/10,width/25,height/20,null,"Help");
     font = loadFont("BerlinSansFBDemi-Bold-100.vlw");
     textFont(font);
   }
