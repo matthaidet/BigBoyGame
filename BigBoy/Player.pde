@@ -25,7 +25,7 @@ public class Player{
    this.notJump = true;
    this.level = 1;
    this.yVel = 0;
-   this.yacc = 0;
+   this.yAcc = 0;
   }
   
   public void jump()
