@@ -106,36 +106,40 @@ public class Player{
   public void step()
   {
     int yTemp = y + yVel;
-    if( level == 0 )
+    if( notJump == false )
     {
-      if( yTemp >= FLOOR_0 )
+      if( level == 0 )
       {
-        yAcc = 0;
-        yVel = 0;
-        notJump = true;
-        y = FLOOR_0;
-      }
-    } else if( level == 1 ) 
-    {
-      if( yTemp >= FLOOR_1 )
+        if( yTemp >= FLOOR_0 )
+        {
+          yAcc = 0;
+          yVel = 0;
+          notJump = true;
+          y = FLOOR_0;
+        }
+      } else if( level == 1 ) 
       {
-        yAcc = 0;
-        yVel = 0;
-        notJump = true;
-        y = FLOOR_1;
-      }
-    } else if( level == 2 )
-    {
-      if( yTemp >= FLOOR_2 )
+        if( yTemp >= FLOOR_1 )
+        {
+          yAcc = 0;
+          yVel = 0;
+          notJump = true;
+          y = FLOOR_1;
+        }
+      } else if( level == 2 )
       {
-        yAcc = 0;
-        yVel = 0;
-        notJump = true;
-        y = FLOOR_2;
+        if( yTemp >= FLOOR_2 )
+        {
+          System.out.print("!");
+          yAcc = 0;
+          yVel = 0;
+          notJump = true;
+          y = FLOOR_2;
+        }
+      } else {
+        y += yVel;
+        yVel += yAcc;
       }
-    } else {
-      y += yVel;
-      yVel += yAcc;
     }
     
   }
@@ -146,11 +150,12 @@ public class Player{
   public boolean onCollision()
   {
    if( life == 1 ){
-     return true; 
+     //return true; 
    } else{
       life--;
-      return false;
+      
     }
+    return false;
   }
   
   public int getLevel()
