@@ -59,7 +59,7 @@ public class GameManager
     //Check for collisions
     for(int i = 0; i < NUM_LEVELS; i++)
     {
-       for(int j = 0; i < obstacles[i].size(); j++)
+       for(int j = 0; j < obstacles[i].size(); j++)
        {
          Obstacle o = obstacles[i].get(j);
           if( o.checkCollision(PLAYER_X) ){
