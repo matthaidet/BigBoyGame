@@ -8,7 +8,7 @@
 public class Wall extends AbstractObstacle
 {
 
-  public static final int X_STEP = 10;
+  public static final int X_STEP = 25;
 
   /**
    * Constructs a new Wall object

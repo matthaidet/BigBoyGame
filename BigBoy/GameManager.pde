@@ -10,7 +10,7 @@ public class GameManager
 {
   private static final int ARRAY_CAPACITY = 15;
   private static final int NUM_LEVELS = 3;
-  private static final int PLAYER_X = 50;
+  private static final int PLAYER_X = 175;
   private static final int SPAWN_CHANCE = 1000;
   
   private Player p;

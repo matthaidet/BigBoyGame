@@ -10,7 +10,7 @@ public class LifeUp extends AbstractObstacle
    super(level);
   }
   
-  public static final int X_STEP = 20;
+  public static final int X_STEP = 40;
 
   public void stepX()
   {
