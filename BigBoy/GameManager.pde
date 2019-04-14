@@ -56,8 +56,9 @@ public class GameManager
         if( o != null )
         {
           //Check if objects are off screen and remove them
-           if( o.getX() < 0 ){
+           if( o.getX() < -50 ){
               obstacles[i].remove(o);
+
            }
            //Check for collisions
            if( o.checkCollision(PLAYER_X) ){
