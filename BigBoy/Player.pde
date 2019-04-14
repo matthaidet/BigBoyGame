@@ -6,7 +6,7 @@ enum Animation_State {
    DEATH
 }
 
-public class Player
+public class Player 
 {
   int life;
   int score;
@@ -33,8 +33,9 @@ public class Player
   public final int FLOOR_2 = TILE_HEIGHT + 15;
   public final int FLOOR_1 = TILE_HEIGHT*3 + 50;
   public final int FLOOR_0 = TILE_HEIGHT*5 + 50;
+  public int animationIndex;
   
-  private final PImage RUN_IMAGE = loadImage("player1.png");
+  private final PImage RUN_IMAGES[] = {loadImage("player1.png"), loadImage("player2.png")};
   private final PImage JUMP_IMAGE = loadImage("playerjump.png");
   private final PImage FALL_IMAGE = loadImage("playerfall.png");
   
@@ -56,11 +57,18 @@ public class Player
   
   public void display()
   {
-    PImage person = RUN_IMAGE;
+    PImage person = RUN_IMAGES[0];
     
     switch(state){
       case RUN:
-        person = RUN_IMAGE;
+      if(frameCount%10 == 0){
+      if(animationIndex==0){
+        animationIndex=1;
+      } else {
+        animationIndex=0;
+      }
+      }
+        person = RUN_IMAGES[animationIndex];  
       break;
       
       case JUMP:
@@ -185,7 +193,7 @@ public class Player
       } 
     } 
     
-  }
+  
   /**
   *Returns true if player is dead
   *Reduces health otherwise
@@ -201,12 +209,18 @@ public class Player
       if( life == 1 )
       {
         return true; 
+<<<<<<< HEAD
       } 
       else
       {
         life--; 
       }
+=======
+      } else {
+        life--;
+>>>>>>> a1a00e0887989c78165c0279a558114959d5a630
     }
+    } 
    else if(o instanceof LifeUp)
    {
      if(life < START_LIFE)
