@@ -12,16 +12,27 @@ public abstract class Scene {
 
 public class Game extends Scene{
   
+  Player player = new Player();
+  
   public void display(){
-    
+    player.step();
   }
   
   public void click(){
     
   }
   
+  //Control logic
   public void keyPress(){
-    
+    switch(key){
+     case 'w':
+       player.jump();
+     break;
+     
+     case 's':
+       player.drop();
+     break;
+    }
   }
   
 }
@@ -107,7 +118,7 @@ public class Menu extends Scene{
   
     public void keyPress(){
     
-  }
+    }
   
   
 }
@@ -122,8 +133,8 @@ public class EndScene extends Scene {
     
   }
   
-    public void keyPress(){
-    
+  public void keyPress(){
+      
   }
   
 }
