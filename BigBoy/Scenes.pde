@@ -22,12 +22,24 @@ public class Game extends Scene{
 
 public class Help extends Scene{
   
+  Button menuButton;
+  
+  public Help(){
+    menuButton = new Button(width/2,height-100,5,height/15,null,"Main Menu");
+  }
+  
   public void display(){
-    
+     fill(255);
+     stroke(255);
+     textSize(75);
+     text("The object of the game is to stay alive.\nMove your player from level to level to \navoid walls and click to \nuse your weapon against enemies.", width/2-600, height*.25);
+     menuButton.display();
   }
   
   public void click(){
-    
+    if(menuButton.isHovered()){
+     currentScene = new Menu(); 
+    }
   }
   
 }
@@ -40,10 +52,10 @@ public class Menu extends Scene{
   PFont font;
   
   public Menu(){
-    startButton = new Button(width/2,height/2,width/25,height/20,null,"Start");
-    helpButton = new Button(width/2,height/2+height/10,width/25,height/20,null,"Help");
     font = loadFont("BerlinSansFBDemi-Bold-100.vlw");
     textFont(font);
+    startButton = new Button(width/2,height/2,10,height/20,null,"Start");
+    helpButton = new Button(width/2,height/2+height/10,10,height/20,null,"Help");
   }
   
   void click() {
