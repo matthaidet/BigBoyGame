@@ -44,6 +44,7 @@ public class Player{
    this.yAcc = 0;
    
    //Init animation system
+   state = Animation_State.RUN;
   }
   
   public void display()
