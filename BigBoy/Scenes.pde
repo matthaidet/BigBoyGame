@@ -132,7 +132,7 @@ public class EndScene extends Scene {
   Button menuButton;
   
   public EndScene(){
-    menuButton = new Button(width*7/16,height*2/3,5,height/15,null,"Main Menu");
+    menuButton = new Button(width/3,height/3,5,height/15,null,"Main Menu");
   }
   
   public void display(){
