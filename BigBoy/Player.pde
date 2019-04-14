@@ -124,24 +124,14 @@ public class Player
     //CODE FOR JUMPING
     if( notJump == false )
     { 
-      if( level == 0 )
-      {
-        if( yTemp < FLOOR_0  )
-        {
-          yAcc = 0;
-          yVel = 0;
-          notJump = true;
-          y = FLOOR_0;
-        } else {
-          fall();
-        }
-      } else if( level == 1 ) 
+      if( level == 1 ) 
       {
         if( yTemp < FLOOR_1 )
         {
           yAcc = 0;
           yVel = 0;
           notJump = true;
+          state = Animation_State.RUN;
           y = FLOOR_1;
         } else {
           fall();
@@ -153,6 +143,7 @@ public class Player
           yAcc = 0;
           yVel = 0;
           notJump = true;
+          state = Animation_State.RUN;
           y = FLOOR_2;
         } else {
           fall();
@@ -173,6 +164,7 @@ public class Player
           yVel = 0;
           notFall = true;
           y = FLOOR_0;
+          state = Animation_State.RUN;
         } else {
           fall();
         }
@@ -183,19 +175,12 @@ public class Player
           yAcc = 0;
           yVel = 0;
           notFall = true;
+          state = Animation_State.RUN;
           y = FLOOR_1;
         } else {
           fall();
         }
-      } else if( level == 2 )
-        {
-        if( yTemp > FLOOR_2 )
-        {
-          yAcc = 0;
-          yVel = 0;
-          notFall = true;
-          y = FLOOR_2;
-        } else {
+      } else {
           fall();
         }
       } 
@@ -218,7 +203,7 @@ public class Player
       {
         return true; 
       } 
-      else
+    } else
       {
         life--; 
       }
