@@ -1,0 +1,37 @@
+/**
+  Big Boy game
+  Property of the Big boy squad.
+  2019
+*/
+Scene currentScene;
+AssetManager assets;
+
+private static int GAME_SPEED = 10;
+
+void setup(){
+  background(0);
+  size(1920, 1080);
+  //fullScreen();
+  assets = new AssetManager();
+  currentScene = new Menu();
+}
+
+// Main game loop
+void draw(){
+ //background(0);
+ currentScene.display();
+}
+
+public static int getGameSpeed()
+{
+   return GAME_SPEED; 
+}
+
+// Calls the scene's appropriate click method
+void mouseClicked(){
+ currentScene.click(); 
+}
+
+void keyPressed(){
+ currentScene.keyPress(); 
+}
