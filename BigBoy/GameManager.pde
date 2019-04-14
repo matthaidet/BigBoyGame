@@ -48,8 +48,9 @@ public class GameManager
     //Check if objects are off screen and remove them
     for(int i = 0; i < NUM_LEVELS; i++)
     {
-       for(Obstacle o : obstacles[i])
+       for(int j = 0; i < obstacles[i].size(); j++)
        {
+         Obstacle o = obstacles[i].get(j);
           if( o.getX() < 0 ){
              obstacles[i].remove(o);
           }
@@ -58,8 +59,9 @@ public class GameManager
     //Check for collisions
     for(int i = 0; i < NUM_LEVELS; i++)
     {
-       for(Obstacle o : obstacles[i])
+       for(int j = 0; i < obstacles[i].size(); j++)
        {
+         Obstacle o = obstacles[i].get(j);
           if( o.checkCollision(PLAYER_X) ){
             if( p.onCollision() ){
               currentScene = new EndScene();
@@ -88,8 +90,9 @@ public class GameManager
   
     for(int i = 0; i < NUM_LEVELS; i++)
     {
-       for(Obstacle o : obstacles[i])
+       for(int j = 0; i < obstacles[i].size(); j++)
        {
+         Obstacle o = obstacles[i].get(j);
           o.display(); 
        }
     }
