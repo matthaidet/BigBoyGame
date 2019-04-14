@@ -18,5 +18,9 @@ public class LifeUp extends AbstractObstacle
   {
     x -= X_STEP;
   }
-}
+  
+  public void display()
+  {
+      
+  }
 }
