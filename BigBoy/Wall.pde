@@ -12,6 +12,7 @@ public class Wall extends AbstractObstacle
   
   private final PImage car = loadImage("car.png");
   private final PImage drill = loadImage("drill.png");
+  private final PImage plane = loadImage("plane.png");
   
   /**
    * Constructs a new Wall object
@@ -46,7 +47,7 @@ public class Wall extends AbstractObstacle
     else
     {
       // Place holder for airplane
-      image(car, getX(), FLOOR_HEIGHTS[getLevel()], 100, 100);
+      image(plane, getX(), FLOOR_HEIGHTS[getLevel()], 100, 100);
     }
      
   }
