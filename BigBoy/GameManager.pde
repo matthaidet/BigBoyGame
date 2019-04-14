@@ -10,7 +10,7 @@ public class GameManager
 {
   private static final int ARRAY_CAPACITY = 15;
   private static final int NUM_LEVELS = 3;
-  private static final int PLAYER_X = 50;
+  private static final int PLAYER_X = 175;
   private static final int SPAWN_CHANCE = 1000;
   
   private Player p;
@@ -40,6 +40,8 @@ public class GameManager
      obstacles[2] = new ArrayList<Obstacle>(ARRAY_CAPACITY);
   }
   
+
+  
   //Master updater loop for the game
   public void updateGame(){
     //Moves the player
@@ -62,8 +64,8 @@ public class GameManager
 
            }
            //Check for collisions
-           if( o.checkCollision(PLAYER_X) ){
-             if( p.onCollision(o) && p.getLevel()==o.getLevel() ){
+           if( o.checkCollision(PLAYER_X) && p.getLevel() == o.getLevel() ){
+             if( p.onCollision(o) ){
                currentScene = new EndScene();
             } else{
               obstacles[i].remove(o);

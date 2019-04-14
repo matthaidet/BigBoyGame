@@ -13,9 +13,9 @@ public abstract class AbstractObstacle implements Obstacle
   
   public static final int tileheight = 0;
   protected final int TILE_HEIGHT = height/7;
-  private final int FLOOR_2 = TILE_HEIGHT;
-  private final int FLOOR_1 = TILE_HEIGHT*4 - 20;
-  private final int FLOOR_0 = TILE_HEIGHT*6 - 20;
+  public final int FLOOR_2 = TILE_HEIGHT + 15;
+  public final int FLOOR_1 = TILE_HEIGHT*3 + 50;
+  public final int FLOOR_0 = TILE_HEIGHT*5 + 50;
   public final int[] FLOOR_HEIGHTS = { FLOOR_0, FLOOR_1, FLOOR_2 };
   
   /**

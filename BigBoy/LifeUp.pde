@@ -10,7 +10,7 @@ public class LifeUp extends AbstractObstacle
    super(level);
   }
   
-  public static final int X_STEP = 20;
+  public final int X_STEP = 20 * BigBoy.getGameSpeed();
 
   public void stepX()
   {

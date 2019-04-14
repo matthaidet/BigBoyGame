@@ -9,6 +9,8 @@ Scene currentScene;
 AssetManager assets;
 SoundFile music;
 
+private static int GAME_SPEED = 1;
+
 void setup(){
   background(0);
   size(1920, 1080);
@@ -28,6 +30,11 @@ void load(){
 void draw(){
  //background(0);
  currentScene.display();
+}
+
+public static int getGameSpeed()
+{
+   return GAME_SPEED; 
 }
 
 // Calls the scene's appropriate click method

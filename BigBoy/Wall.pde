@@ -8,7 +8,7 @@
 public class Wall extends AbstractObstacle
 {
 
-  public static final int X_STEP = 10;
+  public final int X_STEP = 20 * BigBoy.getGameSpeed();
 
   /**
    * Constructs a new Wall object
