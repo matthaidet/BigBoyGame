@@ -124,17 +124,26 @@ public class EndScene extends Scene {
  
   Button menuButton;
   
+  public EndScene(){
+    menuButton = new Button(width*7/16,height*2/3,5,height/15,null,"Main Menu");
+  }
   
   public void display(){
-    
+      fill(255);
+     stroke(255);
+     textSize(100);
+     text("GAME OVER.", width/2-600, height*.25);
+     menuButton.display();
   }
   
   public void click(){
-    
+    if(menuButton.isHovered()){
+     currentScene = new Menu(); 
+    }
   }
   
   public void keyPress(){
-      
+     
   }
   
 }
