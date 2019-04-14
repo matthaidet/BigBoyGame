@@ -46,7 +46,7 @@ public class Help extends Scene{
      fill(255);
      stroke(255);
      textSize(75);
-     text("The object of the game is to stay alive.\nMove your player from level to level to \navoid walls and click to \nuse your weapon against enemies.", width/2-600, height*.25);
+     text("The object of the game is to stay alive.\nMove your player from level to level to \navoid walls and click to \nuse your weapon against enemies.\n[W] - Jump Up\n[S] - Fall Down", width/2-600, height*.25);
      menuButton.display();
   }
   
