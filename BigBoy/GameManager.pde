@@ -83,9 +83,9 @@ public class GameManager
    */
   public void drawAll()
   {
-    p.display();
     backgroundDrawer.display();
-    
+    p.display();
+  
     for(int i = 0; i < NUM_LEVELS; i++)
     {
        for(Obstacle o : obstacles[i])

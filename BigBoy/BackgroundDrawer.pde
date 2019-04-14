@@ -26,7 +26,7 @@ public class BackgroundDrawer{
     
     public void display(){
       for(int i = 0; i < size; i++){
-       tiles[i]--;
+       tiles[i]-=1.5;
        if(tiles[i]+TILE_SIZE <= 0){
          tiles[i] = width;
        }
