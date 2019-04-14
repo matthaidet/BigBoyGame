@@ -9,6 +9,8 @@ public class Wall extends AbstractObstacle
 {
   
   int x;
+  public static final int X_STEP = 10;
+  
   
   /**
    * Constructs a new Wall object
@@ -19,10 +21,15 @@ public class Wall extends AbstractObstacle
    this.x = width; 
   }
   
-  public static final int X_STEP = 10;
-
   public void stepX()
   {
     x -= X_STEP;
   }
+  
+  public void display()
+  {
+      
+  }
+  
+  
 }
