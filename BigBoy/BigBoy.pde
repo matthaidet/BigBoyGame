@@ -6,6 +6,7 @@
 Scene currentScene;
 
 void setup(){
+  
   background(0);
   size(1920, 1080);
   //fullScreen();

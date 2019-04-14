@@ -122,6 +122,9 @@ public class Menu extends Scene{
 
 public class EndScene extends Scene {
  
+  Button menuButton;
+  
+  
   public void display(){
     
   }
