@@ -191,7 +191,8 @@ public class Player
       } else {
           fall();
       } 
-    } 
+    }
+  }
     
   
   /**
@@ -209,18 +210,13 @@ public class Player
       if( life == 1 )
       {
         return true; 
-<<<<<<< HEAD
       } 
       else
       {
         life--; 
       }
-=======
-      } else {
-        life--;
->>>>>>> a1a00e0887989c78165c0279a558114959d5a630
+
     }
-    } 
    else if(o instanceof LifeUp)
    {
      if(life < START_LIFE)

@@ -1,20 +1,22 @@
 public class LifeUp extends AbstractObstacle
 {
   private final PImage pic = loadImage("topac.png");
-  
+  private int speed;
   /**
    * Constructs a new Wall object
    */
-  public LifeUp(int level)
+  public LifeUp(int level, int speed)
   {
-   super(level);
+    super(level);
+    this.speed = speed;
+
   }
   
-  public final int X_STEP = 20 * BigBoy.getGameSpeed();
+  public final int X_STEP = 20;
 
   public void stepX()
   {
-    setX(getX() - X_STEP);
+    setX(getX() - X_STEP * speed);
   }
   
   public void display()

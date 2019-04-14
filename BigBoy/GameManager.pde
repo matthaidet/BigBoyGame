@@ -13,12 +13,11 @@ public class GameManager
   private static final int PLAYER_X = 175;
   private static final int SPAWN_CHANCE = 1000;
   
-  private int score;
-  
   private Player p;
   private BackgroundDrawer backgroundDrawer;
   
   ArrayList<Obstacle>[] obstacles;
+  private int gameSpeed;
   /*
   private ArrayList<Obstacle> level0;
   private ArrayList<Obstacle> level1;
@@ -30,12 +29,11 @@ public class GameManager
    *
    * (Potentially singleton)
    */
-  public GameManager()
+  public GameManager(int diff)
   {
+    gameSpeed = diff;
      p = new Player();
      backgroundDrawer = new BackgroundDrawer();
-     
-     score = 0;
      
      obstacles = new ArrayList[NUM_LEVELS];
      
@@ -73,7 +71,6 @@ public class GameManager
                currentScene = new EndScene();
             } else{
               obstacles[i].remove(o);
-              score += 10;
             }
 
           }
@@ -115,8 +112,6 @@ public class GameManager
           o.display(); 
        }
     }
-    
-    text("Score: " + score, 500, 500 );
   }
   
   private void generateObstacle()
@@ -127,7 +122,7 @@ public class GameManager
     Obstacle o;
     if(true) // Place holder for randomly generating different types of objects. For now we only have Wall
     {
-      o = new Wall(destLvl);
+      o = new Wall(destLvl, gameSpeed);
     }
       
     obstacles[destLvl].add(o);  
@@ -140,7 +135,7 @@ public class GameManager
     Obstacle o;
     if(true) // Place holder for other powerups
     {
-       o = new LifeUp(destLvl); 
+       o = new LifeUp(destLvl, gameSpeed); 
     }
     
     obstacles[destLvl].add(o);
@@ -159,6 +154,14 @@ public class GameManager
     }
   }
   
-  
+  public int getGameSpeed()
+{
+   return gameSpeed; 
+}
+
+public void setGameSpeed( int speed )
+{
+   this.gameSpeed = speed;
+}
   
 }

@@ -15,8 +15,8 @@ public class Game extends Scene{
   GameManager manager;
   
   
-  public Game(){
-   manager = new GameManager(); 
+  public Game( int diff ){
+   manager = new GameManager( diff ); 
   }
   
   public void display(){
@@ -90,7 +90,7 @@ public class Menu extends Scene{
   
   void click() {
     if(startButton.isHovered()){
-      currentScene = new Game();
+      currentScene = new Difficulty();
     }
     if(helpButton.isHovered()){
       currentScene = new Help();
@@ -196,5 +196,51 @@ public class Loading extends Scene {
   public void keyPress(){
     
   }
-  
 }
+  
+  
+
+  public class Difficulty extends Scene
+  {
+    private int EASY = 1;
+    private int MEDIUM = 5;
+    private int HARD = 10;
+    Button hardButton;
+    Button mediumButton;
+    Button easyButton;
+    
+    public Difficulty(){
+    }
+    
+    public void click()
+    {
+      if(easyButton.isHovered())
+      {
+       currentScene = new Game( EASY ); 
+      } 
+      else if(mediumButton.isHovered())
+      {
+        currentScene = new Game( MEDIUM );
+      }
+      else if(hardButton.isHovered())
+      {
+        currentScene = new Game( HARD );
+      }
+    }
+  
+    public void keyPress()
+    {
+    
+    }
+    public void display()
+    {
+      background(0);
+      fill(255);
+      stroke(255);
+      textSize(50);
+      easyButton = new Button(width/3,height/3 + 200,5,height/15,null,"Easy");
+      mediumButton = new Button(width/3,height/3 + 100,5,height/15,null,"Medium");
+      hardButton = new Button(width/3,height/3,5,height/15,null,"Hard");
+    }
+  }
+   

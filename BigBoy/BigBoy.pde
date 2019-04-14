@@ -9,7 +9,8 @@ Scene currentScene;
 AssetManager assets;
 SoundFile music;
 
-private static int GAME_SPEED = 5;
+
+
 
 void setup(){
   background(0);
@@ -32,10 +33,7 @@ void draw(){
  currentScene.display();
 }
 
-public static int getGameSpeed()
-{
-   return GAME_SPEED; 
-}
+
 
 // Calls the scene's appropriate click method
 void mouseClicked(){
@@ -43,5 +41,5 @@ void mouseClicked(){
 }
 
 void keyPressed(){
- currentScene.keyPress(); 
+ currentScene.keyPress();
 }
