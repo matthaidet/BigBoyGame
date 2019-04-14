@@ -142,4 +142,9 @@ public class Player{
     }
   }
   
+  public int getLevel()
+  {
+    return level;
+  }
+  
 }

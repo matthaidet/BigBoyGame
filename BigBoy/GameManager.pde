@@ -10,6 +10,7 @@ public class GameManager
 {
   private static final int ARRAY_CAPACITY = 5;
   private static final int NUM_LEVELS = 3;
+  private static final int PLAYER_X = 50;
   
   private Player p;
   
@@ -38,9 +39,36 @@ public class GameManager
   
   //Master updater loop for the game
   public void updateGame(){
+    //Moves the player
     p.step();
     p.display();
+    //Draws all the objects
     drawAll();
+    //Check if objects are off screen and remove them
+    for(int i = 0; i < NUM_LEVELS; i++)
+    {
+       for(Obstacle o : obstacles[i])
+       {
+          if( o.getX() < 0 ){
+             obstacles[i].remove(o);
+          }
+       }
+    }
+    //Check for collisions
+    for(int i = 0; i < NUM_LEVELS; i++)
+    {
+       for(Obstacle o : obstacles[i])
+       {
+          if( o.checkCollision(PLAYER_X) ){
+            if( p.onCollision() ){
+              currentScene = new EndScene();
+            } else{
+              obstacles[i].remove(o);
+            }
+          }
+       }
+    }
+    
   }
   
   
