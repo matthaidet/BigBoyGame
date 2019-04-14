@@ -6,7 +6,7 @@
 Scene currentScene;
 AssetManager assets;
 
-private static int GAME_SPEED = 1;
+private static int GAME_SPEED = 5;
 
 void setup(){
   background(0);
