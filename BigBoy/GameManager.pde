@@ -45,32 +45,35 @@ public class GameManager
     //Moves the player
     p.step();
     drawAll();
-    //Check if objects are off screen and remove them
+    //Step all the objects
+    
+    
     for(int i = 0; i < NUM_LEVELS; i++)
     {
-       for(int j = 0; j < obstacles[i].size(); j++)
-       {
-         Obstacle o = obstacles[i].get(j);
-          if( o.getX() < 0 ){
-             obstacles[i].remove(o);
-          }
-       }
-    }
-    //Check for collisions
-    for(int i = 0; i < NUM_LEVELS; i++)
-    {
-       for(int j = 0; j < obstacles[i].size(); j++)
-       {
-         Obstacle o = obstacles[i].get(j);
-          if( o != null && o.checkCollision(PLAYER_X) ){
-            if( p.onCollision() ){
-              currentScene = new EndScene();
+      for(int j = 0; j < obstacles[i].size(); j++)
+      {
+        Obstacle o = obstacles[i].get(j);
+        if( o != null )
+        {
+          //Check if objects are off screen and remove them
+           if( o.getX() < 0 ){
+              obstacles[i].remove(o);
+           }
+           //Check for collisions
+           if( o.checkCollision(PLAYER_X) ){
+             if( p.onCollision() ){
+               currentScene = new EndScene();
             } else{
               obstacles[i].remove(o);
             }
           }
-       }
+          //Step each object
+          o.stepX();
+        }
+      }
     }
+    
+
     //Generate new Objects
     int chance = (int)random(0, SPAWN_CHANCE);
     if( chance == 0 ){
@@ -100,7 +103,7 @@ public class GameManager
   
   private void generateObstacle()
   {
-      randomSeed(6255);
+      //randomSeed(6255);
       int destLvl = (int)random(0, 3); 
     
       Obstacle o;
