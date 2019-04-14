@@ -6,7 +6,8 @@ enum Animation_State {
    DEATH
 }
 
-public class Player{
+public class Player
+{
   int life;
   int score;
   int x;
@@ -35,6 +36,7 @@ public class Player{
   
   private final PImage RUN_IMAGE = loadImage("player1.png");
   private final PImage JUMP_IMAGE = loadImage("playerjump.png");
+  private final PImage FALL_IMAGE = loadImage("playerfall.png");
   
   public Player()
   {
@@ -63,9 +65,9 @@ public class Player{
       case JUMP:
         person = JUMP_IMAGE;
       break;
-      
+        
       case FALL:
-      
+        person = FALL_IMAGE;
       break;
       
       case DEATH:
