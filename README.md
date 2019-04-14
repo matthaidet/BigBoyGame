@@ -1,6 +1,8 @@
 # BigBoyGame
 The Legend of Big Boy the Game, download the game on 
 http://www.mediafire.com/file/oizzon5h1qgom05/application.windows64.rar/file
+                            OR
+unofficialbigboy.com
 
 Instructions:
 1. Download the game from the link
