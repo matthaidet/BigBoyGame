@@ -67,6 +67,7 @@ public class GameManager
           //Check if objects are off screen and remove them
            if( o.getX() < -50 ){
               obstacles[i].remove(o);
+              score += 10;
 
            }
            //Check for collisions
@@ -75,7 +76,7 @@ public class GameManager
                currentScene = new EndScene();
             } else{
               obstacles[i].remove(o);
-              score += 10;
+              
             }
 
           }
@@ -93,7 +94,7 @@ public class GameManager
       {
         generateObstacle();
       }
-      else if ( chance > 998 )
+      else if ( chance > 999 )
       {
         generatePowerUp();
       }
@@ -104,7 +105,7 @@ public class GameManager
       {
         generateObstacle();
       }
-      else if ( chance > 995 )
+      else if ( chance > 998 )
       {
         generatePowerUp();
       }
@@ -115,7 +116,7 @@ public class GameManager
       {
         generateObstacle();
       }
-      else if ( chance > 992 )
+      else if ( chance > 995 )
       {
         generatePowerUp();
       } 
