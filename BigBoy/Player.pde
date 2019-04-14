@@ -205,14 +205,26 @@ public class Player
   *Returns true if player is dead
   *Reduces health otherwise
   */
-  public boolean onCollision()
+  public boolean onCollision(Obstacle o)
   {
-   if( life == 1 ){
-     return true; 
-   } else{
-      life--;
-      
+    if(o instanceof Wall)
+    {
+      if( life == 1 )
+      {
+        return true; 
+      } 
+      else
+      {
+        life--; 
+      }
     }
+   else if(o instanceof LifeUp)
+   {
+     if(life < START_LIFE)
+     {
+       life++;
+     }
+   }
     return false;
   }
   

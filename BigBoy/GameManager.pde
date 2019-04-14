@@ -63,11 +63,12 @@ public class GameManager
            }
            //Check for collisions
            if( o.checkCollision(PLAYER_X) ){
-             if( p.onCollision() && p.getLevel()==o.getLevel() ){
+             if( p.onCollision(o) && p.getLevel()==o.getLevel() ){
                currentScene = new EndScene();
             } else{
               obstacles[i].remove(o);
             }
+
           }
           //Step each object
           o.stepX();
