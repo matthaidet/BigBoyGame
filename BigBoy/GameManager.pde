@@ -40,6 +40,8 @@ public class GameManager
      obstacles[2] = new ArrayList<Obstacle>(ARRAY_CAPACITY);
   }
   
+
+  
   //Master updater loop for the game
   public void updateGame(){
     //Moves the player
