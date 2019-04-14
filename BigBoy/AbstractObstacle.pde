@@ -45,12 +45,6 @@ public abstract class AbstractObstacle implements Obstacle
   }
   
   @Override
-  public void display()
-  {
-     //TODO: Finish later 
-  }
-  
-  @Override
   public boolean checkCollision(int otherX)
   {
      return otherX <= getX();

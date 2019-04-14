@@ -49,13 +49,15 @@ public class Player{
   
   public void display()
   {
+    PImage person = loadImage("player1.png");
+    
     switch(state){
       case RUN:
-        
+        person = loadImage("player1.png");
       break;
       
       case JUMP:
-      
+        person = loadImage("playerjump.png");
       break;
       
       case FALL:
@@ -66,6 +68,8 @@ public class Player{
       
       break;
     }
+    
+    image(person, PLAYER_X, y, width/2-500, height/2-250);
   }
   
   public void jump()
@@ -76,6 +80,8 @@ public class Player{
      {
        level++;
      }
+     state = Animation_State.JUMP;
+     
      notJump = false;
      yVel = JUMP_VELOCITY;
      yAcc = ACCELERATION;
@@ -86,6 +92,7 @@ public class Player{
   {
     if( notJump && level != 0 )
     {
+      state = Animation_State.FALL;
       level--;
       yAcc = ACCELERATION;
       notJump = false;
