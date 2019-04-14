@@ -31,7 +31,6 @@ public class LifeUp extends AbstractObstacle
     }
     else
     {
-      // Place holder for airplane
       image(pic, getX(), FLOOR_HEIGHTS[getLevel()], 100, 100);
     }
   }

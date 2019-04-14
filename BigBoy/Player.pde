@@ -86,8 +86,7 @@ public class Player
       
       break;
     }
-    text("Life: ", 300, 300);
-    text(life, 400, 300);
+    text("Life: " + life, 15, 45);
     image(person, PLAYER_X, y, TILE_HEIGHT, TILE_HEIGHT);
   }
   

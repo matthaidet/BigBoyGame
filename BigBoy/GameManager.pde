@@ -144,7 +144,7 @@ public class GameManager
        }
     }
     
-    text("Score: " + score, 500, 500);
+    text("Score: " + score, width - 100, 45);
   }
   
   private void generateObstacle()
