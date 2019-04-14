@@ -69,9 +69,12 @@ public class Menu extends Scene{
   String title = "The Adventures of Big Boy";
   PFont font;
   PImage bigBoys[];
+  PImage background;
   int animationIndex, delay;
   
   public Menu(){
+    background = loadImage("menubackground.png");
+    background.resize(width,height);
     bigBoys = new PImage[2];
     bigBoys[0] = loadImage("player1.png");
     bigBoys[1] = loadImage("player2.png");
@@ -94,6 +97,7 @@ public class Menu extends Scene{
   }
   
   public void display(){
+     background(background);
      if(delay>=25){
       if(animationIndex==0){
         animationIndex=1;
