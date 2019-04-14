@@ -13,6 +13,8 @@ public class GameManager
   private static final int PLAYER_X = 175;
   private static final int SPAWN_CHANCE = 1000;
   
+  private int score;
+  
   private Player p;
   private BackgroundDrawer backgroundDrawer;
   
@@ -32,6 +34,8 @@ public class GameManager
   {
      p = new Player();
      backgroundDrawer = new BackgroundDrawer();
+     
+     score = 0;
      
      obstacles = new ArrayList[NUM_LEVELS];
      
@@ -69,6 +73,7 @@ public class GameManager
                currentScene = new EndScene();
             } else{
               obstacles[i].remove(o);
+              score += 10;
             }
 
           }
@@ -110,6 +115,8 @@ public class GameManager
           o.display(); 
        }
     }
+    
+    text("Score: " + score, 500, 500 );
   }
   
   private void generateObstacle()
