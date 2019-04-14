@@ -12,9 +12,10 @@ public class Player{
   int x;
   int y;
   boolean notJump;
+  boolean notFall;
   int level;
   int yVel;
-  int yAcc;
+  double yAcc;
   
   //Images and animations
   Animation_State state;
@@ -26,9 +27,8 @@ public class Player{
   private final int TILE_HEIGHT = height/10;
   public static final int START_LIFE = 3;
   public static final int PLAYER_X = 100;
-  public static final int START_Y = 200;
-  public static final int JUMP_VELOCITY = -10;
-  public static final int ACCELERATION = 1;
+  public static final int JUMP_VELOCITY = -30;
+  public static final double ACCELERATION = 1;
   public final int FLOOR_2 = TILE_HEIGHT;
   public final int FLOOR_1 = TILE_HEIGHT*3;
   public final int FLOOR_0 = TILE_HEIGHT*6;
@@ -41,11 +41,12 @@ public class Player{
    this.life = START_LIFE;
    this.score = 0;
    this.x = PLAYER_X;
-   this.y = START_Y;
+   this.y = FLOOR_1;
    this.notJump = true;
    this.level = 1;
    this.yVel = 0;
    this.yAcc = 0;
+   this.notFall = true;
    
    //Init animation system
    state = Animation_State.RUN;
@@ -78,12 +79,9 @@ public class Player{
   
   public void jump()
   {
-   if( notJump )
+   if( notJump && notFall && level < 2)
    {
-     if( level < 2 )
-     {
-       level++;
-     }
+     level++;
      state = Animation_State.JUMP;
      
      notJump = false;
@@ -94,54 +92,104 @@ public class Player{
   
   public void drop()
   {
-    if( notJump && level != 0 )
+    if( notJump && notFall && level != 0 )
     {
+      
       state = Animation_State.FALL;
       level--;
+      yVel = -JUMP_VELOCITY;
       yAcc = ACCELERATION;
-      notJump = false;
+      notFall = false;
     }
+  }
+  
+  
+  private void fall(){
+    y += yVel;
+    yVel += yAcc; 
   }
   
   public void step()
   {
     int yTemp = y + yVel;
+    //CODE FOR JUMPING
     if( notJump == false )
-    {
+    { 
       if( level == 0 )
       {
-        if( yTemp >= FLOOR_0 )
+        if( yTemp < FLOOR_0  )
         {
           yAcc = 0;
           yVel = 0;
           notJump = true;
           y = FLOOR_0;
+        } else {
+          fall();
         }
       } else if( level == 1 ) 
       {
-        if( yTemp >= FLOOR_1 )
+        if( yTemp < FLOOR_1 )
         {
           yAcc = 0;
           yVel = 0;
           notJump = true;
           y = FLOOR_1;
+        } else {
+          fall();
         }
       } else if( level == 2 )
       {
-        if( yTemp >= FLOOR_2 )
+        if( yTemp < FLOOR_2 )
         {
-          System.out.print("!");
           yAcc = 0;
           yVel = 0;
           notJump = true;
           y = FLOOR_2;
+        } else {
+          fall();
         }
-      } else {
-        y += yVel;
-        yVel += yAcc;
       }
     }
     
+    
+    //CODE FOR FALLING
+    if( notFall == false )
+    {
+      if( level == 0 )
+      {
+        if( yTemp > FLOOR_0  )
+        {
+          yAcc = 0;
+          yVel = 0;
+          notFall = true;
+          y = FLOOR_0;
+        } else {
+          fall();
+        }
+      } else if( level == 1 ) 
+      {
+        if( yTemp > FLOOR_1 )
+        {
+          yAcc = 0;
+          yVel = 0;
+          notFall = true;
+          y = FLOOR_1;
+        } else {
+          fall();
+        }
+      } else if( level == 2 )
+        {
+        if( yTemp > FLOOR_2 )
+        {
+          yAcc = 0;
+          yVel = 0;
+          notFall = true;
+          y = FLOOR_2;
+        } else {
+          fall();
+        }
+      } 
+    } 
   }
   /**
   *Returns true if player is dead
