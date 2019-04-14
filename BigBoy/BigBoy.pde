@@ -6,6 +6,8 @@
 Scene currentScene;
 AssetManager assets;
 
+private static int GAME_SPEED = 1;
+
 void setup(){
   background(0);
   size(1920, 1080);
@@ -18,6 +20,11 @@ void setup(){
 void draw(){
  //background(0);
  currentScene.display();
+}
+
+public static int getGameSpeed()
+{
+   return GAME_SPEED; 
 }
 
 // Calls the scene's appropriate click method
