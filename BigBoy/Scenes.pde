@@ -39,7 +39,7 @@ public class Help extends Scene{
   Button menuButton;
   
   public Help(){
-    menuButton = new Button(width/2,height-100,5,height/15,null,"Main Menu");
+    menuButton = new Button(width*7/16,height*2/3,5,height/15,null,"Main Menu");
   }
   
   public void display(){
@@ -79,8 +79,8 @@ public class Menu extends Scene{
     bigBoys[1].resize(500,500);
     font = loadFont("BerlinSansFBDemi-Bold-100.vlw");
     textFont(font);
-    startButton = new Button(width/2,height/2,10,height/20,null,"Start");
-    helpButton = new Button(width/2,height/2+height/10,10,height/20,null,"Help");
+    startButton = new Button(width/2,height/2,3,height/20,null,"Start");
+    helpButton = new Button(width/2,height/2+height/10,3,height/20,null,"Help");
     animationIndex=1;
   }
   
