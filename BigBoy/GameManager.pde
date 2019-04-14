@@ -16,6 +16,8 @@ public class GameManager
   private Player p;
   private BackgroundDrawer backgroundDrawer;
   
+  private int score;
+  
   ArrayList<Obstacle>[] obstacles;
   private int gameSpeed;
   /*
@@ -34,6 +36,8 @@ public class GameManager
     gameSpeed = diff;
      p = new Player();
      backgroundDrawer = new BackgroundDrawer();
+     
+     score = 0;
      
      obstacles = new ArrayList[NUM_LEVELS];
      
@@ -71,6 +75,7 @@ public class GameManager
                currentScene = new EndScene();
             } else{
               obstacles[i].remove(o);
+              score += 10;
             }
 
           }
@@ -137,6 +142,8 @@ public class GameManager
           o.display(); 
        }
     }
+    
+    text("Score: " + score, 500, 500);
   }
   
   private void generateObstacle()
