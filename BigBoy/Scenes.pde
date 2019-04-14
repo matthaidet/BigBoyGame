@@ -132,7 +132,7 @@ public class EndScene extends Scene {
   Button menuButton;
   
   public EndScene(){
-    menuButton = new Button(width*7/16,height*2/3,5,height/15,null,"Main Menu");
+    menuButton = new Button(width/3,height/3,5,height/15,null,"Main Menu");
   }
   
   public void display(){
@@ -151,6 +151,49 @@ public class EndScene extends Scene {
   
   public void keyPress(){
      
+  }
+  
+}
+
+
+public class Loading extends Scene {
+ 
+  PImage shrek;
+  int rotation;
+  
+  public Loading(){
+    shrek = loadImage("plane.png");
+  }
+  
+  public void display(){
+     background(0);
+     fill(255);
+     stroke(255);
+     textSize(100);
+     text("Loading...", width/2-400, height*.25);
+     shrek.resize(500,500);
+     
+     translate(-300, -300);
+     rotate(radians(frameCount*2));
+     image(shrek, width/2, height/2);
+     
+     rotation++;
+     
+     if(rotation>360){
+        rotation = 0; 
+     }
+     
+     if(music!=null){
+         currentScene = new Menu();
+     }
+  }
+  
+  public void click(){
+    
+  }
+  
+  public void keyPress(){
+    
   }
   
 }

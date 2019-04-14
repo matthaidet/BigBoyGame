@@ -1,3 +1,5 @@
+import processing.sound.*;
+
 /**
   Big Boy game
   Property of the Big boy squad.
@@ -5,6 +7,7 @@
 */
 Scene currentScene;
 AssetManager assets;
+SoundFile music;
 
 private static int GAME_SPEED = 5;
 
@@ -13,7 +16,14 @@ void setup(){
   size(1920, 1080);
   //fullScreen();
   assets = new AssetManager();
-  currentScene = new Menu();
+  thread("load");
+  currentScene = new Loading();
+}
+
+void load(){
+  music = new SoundFile(this, "Mega.mp3");
+  music.amp(1);
+  music.loop(); 
 }
 
 // Main game loop
