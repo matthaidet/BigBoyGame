@@ -1,4 +1,10 @@
 
+enum Animation_State {
+   RUN,
+   JUMP,
+   FALL,
+   DEATH
+}
 
 public class Player{
   int life;
@@ -10,6 +16,8 @@ public class Player{
   int yVel;
   int yAcc;
   
+  Animation_State state;
+ 
   public static final int START_LIFE = 3;
   public static final int PLAYER_X = 50;
   public static final int START_Y = 100;
@@ -33,7 +41,23 @@ public class Player{
   
   public void display()
   {
-    
+    switch(state){
+      case RUN:
+      
+      break;
+      
+      case JUMP:
+      
+      break;
+      
+      case FALL:
+      
+      break;
+      
+      case DEATH:
+      
+      break;
+    }
   }
   
   public void jump()
