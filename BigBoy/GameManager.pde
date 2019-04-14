@@ -36,6 +36,14 @@ public class GameManager
      obstacles[2] = new ArrayList<Obstacle>(ARRAY_CAPACITY);
   }
   
+  //Master updater loop for the game
+  public void updateGame(){
+    p.step();
+    p.display();
+    drawAll();
+  }
+  
+  
   /**
    * Draws all the entities on screen
    */
@@ -52,7 +60,7 @@ public class GameManager
     }
   }
   
-  public void generateObstacle()
+  private void generateObstacle()
   {
       randomSeed(6255);
       int destLvl = (int)random(0, 3); 
@@ -64,6 +72,19 @@ public class GameManager
       }
       
       obstacles[destLvl].add(o);  
+  }
+  
+  //Handles control logic of the game
+  public void handlePress(){
+    switch(key){
+     case 'w':
+       p.jump();
+     break;
+     
+     case 's':
+       p.drop();
+     break;
+    }
   }
   
   

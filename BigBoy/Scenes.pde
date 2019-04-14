@@ -12,16 +12,24 @@ public abstract class Scene {
 
 public class Game extends Scene{
   
+  GameManager manager;
+  
+  
+  public Game(){
+   manager = new GameManager(); 
+  }
+  
   public void display(){
-    
+    manager.updateGame();
   }
   
   public void click(){
     
   }
   
+  //Control logic
   public void keyPress(){
-    
+    manager.handlePress();
   }
   
 }
@@ -107,7 +115,7 @@ public class Menu extends Scene{
   
     public void keyPress(){
     
-  }
+    }
   
   
 }
@@ -122,8 +130,8 @@ public class EndScene extends Scene {
     
   }
   
-    public void keyPress(){
-    
+  public void keyPress(){
+      
   }
   
 }
