@@ -6,7 +6,7 @@ enum Animation_State {
    DEATH
 }
 
-public class Player
+public class Player 
 {
   int life;
   int score;
@@ -186,7 +186,7 @@ public class Player
       } 
     } 
     
-  }
+  
   /**
   *Returns true if player is dead
   *Reduces health otherwise
@@ -202,12 +202,10 @@ public class Player
       if( life == 1 )
       {
         return true; 
-      } 
-    } else
-      {
-        life--; 
-      }
+      } else {
+        life--;
     }
+    } 
    else if(o instanceof LifeUp)
    {
      if(life < START_LIFE)
