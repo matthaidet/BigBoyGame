@@ -12,6 +12,7 @@ public class GameManager
   private static final int NUM_LEVELS = 3;
   
   private Player p;
+  private BackgroundDrawer backgroundDrawer;
   
   ArrayList<Obstacle>[] obstacles;
   /*
@@ -28,6 +29,7 @@ public class GameManager
   public GameManager()
   {
      p = new Player();
+     backgroundDrawer = new BackgroundDrawer();
      
      obstacles = new ArrayList[NUM_LEVELS];
      
@@ -39,7 +41,6 @@ public class GameManager
   //Master updater loop for the game
   public void updateGame(){
     p.step();
-    p.display();
     drawAll();
   }
   
@@ -50,6 +51,7 @@ public class GameManager
   public void drawAll()
   {
     p.display();
+    backgroundDrawer.display();
     
     for(int i = 0; i < NUM_LEVELS; i++)
     {
