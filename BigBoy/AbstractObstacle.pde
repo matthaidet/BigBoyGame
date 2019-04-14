@@ -34,7 +34,7 @@ public abstract class AbstractObstacle implements Obstacle
    *
    * @param newX The new value of the X position
    */
-  private void setX(int newX)
+  public void setX(int newX)
   {
      this.x = newX; 
   }

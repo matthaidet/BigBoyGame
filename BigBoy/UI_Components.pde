@@ -41,7 +41,6 @@ public class Button{
     fill(0);
     text(text,x+padding,y+50);
     
-    
   }
   
 }

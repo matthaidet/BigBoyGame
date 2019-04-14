@@ -6,7 +6,8 @@ enum Animation_State {
    DEATH
 }
 
-public class Player{
+public class Player
+{
   int life;
   int score;
   int x;
@@ -24,7 +25,7 @@ public class Player{
   PImage fallingImg;
   int animation_timer;
  
-  private final int TILE_HEIGHT = height/10;
+  private final int TILE_HEIGHT = height/7;
   public static final int START_LIFE = 3;
   public static final int PLAYER_X = 100;
   public static final int JUMP_VELOCITY = -30;
@@ -35,6 +36,7 @@ public class Player{
   
   private final PImage RUN_IMAGE = loadImage("player1.png");
   private final PImage JUMP_IMAGE = loadImage("playerjump.png");
+  private final PImage FALL_IMAGE = loadImage("playerfall.png");
   
   public Player()
   {
@@ -64,9 +66,9 @@ public class Player{
       case JUMP:
         person = JUMP_IMAGE;
       break;
-      
+        
       case FALL:
-      
+        person = FALL_IMAGE;
       break;
       
       case DEATH:
