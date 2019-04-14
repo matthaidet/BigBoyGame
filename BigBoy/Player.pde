@@ -32,6 +32,9 @@ public class Player{
   public static final int FLOOR_1 = 200;
   public static final int FLOOR_0 = 300;
   
+  private final PImage RUN_IMAGE = loadImage("player1.png");
+  private final PImage JUMP_IMAGE = loadImage("playerjump.png");
+  
   public Player()
   {
    this.life = START_LIFE;
@@ -49,15 +52,15 @@ public class Player{
   
   public void display()
   {
-    PImage person = loadImage("player1.png");
+    PImage person = RUN_IMAGE;
     
     switch(state){
       case RUN:
-        person = loadImage("player1.png");
+        person = RUN_IMAGE;
       break;
       
       case JUMP:
-        person = loadImage("playerjump.png");
+        person = JUMP_IMAGE;
       break;
       
       case FALL:
