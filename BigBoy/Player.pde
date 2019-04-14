@@ -73,7 +73,7 @@ public class Player{
       break;
     }
     
-    image(person, PLAYER_X, y, width/2-500, height/2-250);
+    image(person, PLAYER_X, y, TILE_HEIGHT, TILE_HEIGHT);
   }
   
   public void jump()

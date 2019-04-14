@@ -48,7 +48,7 @@ public class GameManager
     //Check if objects are off screen and remove them
     for(int i = 0; i < NUM_LEVELS; i++)
     {
-       for(int j = 0; i < obstacles[i].size(); j++)
+       for(int j = 0; j < obstacles[i].size(); j++)
        {
          Obstacle o = obstacles[i].get(j);
           if( o.getX() < 0 ){
@@ -90,7 +90,7 @@ public class GameManager
   
     for(int i = 0; i < NUM_LEVELS; i++)
     {
-       for(int j = 0; i < obstacles[i].size(); j++)
+       for(int j = 0; j < obstacles[i].size(); j++)
        {
          Obstacle o = obstacles[i].get(j);
           o.display(); 
