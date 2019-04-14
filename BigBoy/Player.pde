@@ -16,7 +16,12 @@ public class Player{
   int yVel;
   int yAcc;
   
+  //Images and animations
   Animation_State state;
+  PImage runningImgs[];
+  PImage jumpingImg;
+  PImage fallingImg;
+  int animation_timer;
  
   public static final int START_LIFE = 3;
   public static final int PLAYER_X = 50;
@@ -37,13 +42,15 @@ public class Player{
    this.level = 1;
    this.yVel = 0;
    this.yAcc = 0;
+   
+   //Init animation system
   }
   
   public void display()
   {
     switch(state){
       case RUN:
-      
+        
       break;
       
       case JUMP:

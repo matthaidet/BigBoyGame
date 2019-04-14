@@ -3,8 +3,6 @@
   Property of the Big boy squad.
   2019
 */
-
-PImage image;
 Scene currentScene;
 
 void setup(){
@@ -20,6 +18,7 @@ void draw(){
  currentScene.display();
 }
 
+// Calls the scene's appropriate click method
 void mouseClicked(){
  currentScene.click(); 
 }

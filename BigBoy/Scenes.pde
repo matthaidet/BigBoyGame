@@ -50,12 +50,20 @@ public class Menu extends Scene{
   Button helpButton;
   String title = "The Adventures of Big Boy";
   PFont font;
+  PImage bigBoys[];
+  int animationIndex, delay;
   
   public Menu(){
+    bigBoys = new PImage[2];
+    bigBoys[0] = loadImage("player1.png");
+    bigBoys[1] = loadImage("player2.png");
+    bigBoys[0].resize(500,500);
+    bigBoys[1].resize(500,500);
     font = loadFont("BerlinSansFBDemi-Bold-100.vlw");
     textFont(font);
     startButton = new Button(width/2,height/2,10,height/20,null,"Start");
     helpButton = new Button(width/2,height/2+height/10,10,height/20,null,"Help");
+    animationIndex=1;
   }
   
   void click() {
@@ -68,6 +76,17 @@ public class Menu extends Scene{
   }
   
   public void display(){
+     if(delay>=25){
+      if(animationIndex==0){
+        animationIndex=1;
+      } else {
+        animationIndex=0;
+      }
+      delay=0;
+     } else {
+      delay++;
+     }
+     image(bigBoys[animationIndex], width/2-500, height/2-250);
      fill(255);
      stroke(255);
      textSize(100);
