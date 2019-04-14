@@ -52,7 +52,7 @@ public class Help extends Scene{
   
   public void click(){
     if(menuButton.isHovered()){
-     currentScene = new Menu(); 
+     currentScene = new Menu();
     }
   }
   

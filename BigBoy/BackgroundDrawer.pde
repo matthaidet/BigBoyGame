@@ -15,7 +15,7 @@ public class BackgroundDrawer{
     public TileRoll(PImage img, int y){
       size = ceil(width/TILE_SIZE)+2;
       tile = img;
-      tile.resize(TILE_SIZE,TILE_SIZE+10);
+      tile.resize(TILE_SIZE+10,height);
       tiles = new float[size];
       this.y = y;
       for(int i = 0; i < size; i++){
@@ -38,7 +38,7 @@ public class BackgroundDrawer{
   TileRoll layer;
   
   public BackgroundDrawer(){ 
-   layer = new TileRoll(loadImage("skytop.png"), 0);
+   layer = new TileRoll(loadImage("column.png"), 0);
   }
   
   public void display(){
