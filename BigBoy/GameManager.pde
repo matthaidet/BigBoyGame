@@ -8,10 +8,10 @@
  */
 public class GameManager
 {
-  private static final int ARRAY_CAPACITY = 5;
+  private static final int ARRAY_CAPACITY = 15;
   private static final int NUM_LEVELS = 3;
   private static final int PLAYER_X = 50;
-  private static final int SPAWN_CHANCE = 3;
+  private static final int SPAWN_CHANCE = 1000;
   
   private Player p;
   private BackgroundDrawer backgroundDrawer;
@@ -77,8 +77,13 @@ public class GameManager
 
     //Generate new Objects
     int chance = (int)random(0, SPAWN_CHANCE);
-    if( chance == 0 ){
+    if( chance < 25 )
+    {
       generateObstacle();
+    }
+    else if ( chance > 995 )
+    {
+      generatePowerUp();
     }
     
   }
@@ -90,6 +95,7 @@ public class GameManager
   public void drawAll()
   {
     backgroundDrawer.display();
+    //p.setState(Animation_State.RUN);
     p.display();
   
     for(int i = 0; i < NUM_LEVELS; i++)
@@ -104,16 +110,29 @@ public class GameManager
   
   private void generateObstacle()
   {
-      //randomSeed(6255);
-      int destLvl = (int)random(0, 3); 
+    //randomSeed(6255);
+    int destLvl = (int)random(0, 3); 
     
-      Obstacle o;
-      if(true) // Place holder for randomly generating different types of objects. For now we only have Wall
-      {
-        o = new Wall(destLvl);
-      }
+    Obstacle o;
+    if(true) // Place holder for randomly generating different types of objects. For now we only have Wall
+    {
+      o = new Wall(destLvl);
+    }
       
-      obstacles[destLvl].add(o);  
+    obstacles[destLvl].add(o);  
+  }
+  
+  private void generatePowerUp()
+  {
+    int destLvl = (int)random(0, 3);
+    
+    Obstacle o;
+    if(true) // Place holder for other powerups
+    {
+       o = new LifeUp(destLvl); 
+    }
+    
+    obstacles[destLvl].add(o);
   }
   
   //Handles control logic of the game

@@ -1,11 +1,14 @@
 
-
+/**
+ Draws the and moves the background
+*/
 public class BackgroundDrawer{
 
   private class TileRoll{
     
     //Actual tile size -1 to fix black line issues
     private final int TILE_SIZE = 200;
+    private final int RATE = 4;
 
     float tiles[];
     PImage tile;
@@ -15,7 +18,7 @@ public class BackgroundDrawer{
     public TileRoll(PImage img, int y){
       size = ceil(width/TILE_SIZE)+2;
       tile = img;
-      tile.resize(TILE_SIZE+10,height);
+      tile.resize(TILE_SIZE+15,height);
       tiles = new float[size];
       this.y = y;
       for(int i = 0; i < size; i++){
@@ -25,7 +28,7 @@ public class BackgroundDrawer{
     
     public void display(){
       for(int i = 0; i < size; i++){
-       tiles[i]-=3;
+       tiles[i]-=RATE;
        if(tiles[i]+TILE_SIZE <= 0){
          tiles[i] = width;
        }
