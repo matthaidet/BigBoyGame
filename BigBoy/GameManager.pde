@@ -47,8 +47,9 @@ public class GameManager
     drawAll();
     //Step all the objects
     
-    
-    for(int i = 0; i < NUM_LEVELS; i++)
+    //Limit the number of times this runs for performance
+    if(frameCount % 2 == 0) {
+    for(int i = 0; i < NUM_LEVELS; i++) //
     {
       for(int j = 0; j < obstacles[i].size(); j++)
       {
@@ -62,7 +63,7 @@ public class GameManager
            }
            //Check for collisions
            if( o.checkCollision(PLAYER_X) ){
-             if( p.onCollision() ){
+             if( p.onCollision() && p.getLevel()==o.getLevel() ){
                currentScene = new EndScene();
             } else{
               obstacles[i].remove(o);
@@ -74,7 +75,6 @@ public class GameManager
       }
     }
     
-
     //Generate new Objects
     int chance = (int)random(0, SPAWN_CHANCE);
     if( chance < 25 )
@@ -84,6 +84,7 @@ public class GameManager
     else if ( chance > 995 )
     {
       generatePowerUp();
+    }
     }
     
   }

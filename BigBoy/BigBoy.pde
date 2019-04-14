@@ -16,7 +16,7 @@ void setup(){
 
 // Main game loop
 void draw(){
- background(0);
+ //background(0);
  currentScene.display();
 }
 

@@ -30,9 +30,9 @@ public class Player
   public static final int PLAYER_X = 100;
   public static final int JUMP_VELOCITY = -30;
   public static final double ACCELERATION = 1;
-  public final int FLOOR_2 = TILE_HEIGHT;
-  public final int FLOOR_1 = TILE_HEIGHT*3;
-  public final int FLOOR_0 = TILE_HEIGHT*6;
+  public final int FLOOR_2 = TILE_HEIGHT + 15;
+  public final int FLOOR_1 = TILE_HEIGHT*3 + 50;
+  public final int FLOOR_0 = TILE_HEIGHT*5 + 50;
   
   private final PImage RUN_IMAGE = loadImage("player1.png");
   private final PImage JUMP_IMAGE = loadImage("playerjump.png");
@@ -208,7 +208,7 @@ public class Player
   public boolean onCollision()
   {
    if( life == 1 ){
-     //return true; 
+     return true; 
    } else{
       life--;
       

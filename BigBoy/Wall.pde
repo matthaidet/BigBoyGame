@@ -34,15 +34,15 @@ public class Wall extends AbstractObstacle
 
     if(getLevel() == 0)
     {
-      image(assets.getDrill(), getX(), FLOOR_HEIGHTS[getLevel()], 100, 100);
+      image(assets.getDrill(), getX(), FLOOR_HEIGHTS[getLevel()], TILE_HEIGHT, TILE_HEIGHT);
     }
     else if(getLevel() == 1)
     {
-      image(assets.getCar(), getX(), FLOOR_HEIGHTS[getLevel()], 100, 100);
+      image(assets.getCar(), getX(), FLOOR_HEIGHTS[getLevel()], TILE_HEIGHT, TILE_HEIGHT);
     }
     else
     {
-      image(assets.getPlane(), getX(), FLOOR_HEIGHTS[getLevel()], 100, 100);
+      image(assets.getPlane(), getX(), FLOOR_HEIGHTS[getLevel()], TILE_HEIGHT, TILE_HEIGHT);
     }
      
   }
