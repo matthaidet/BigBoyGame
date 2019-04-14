@@ -203,13 +203,19 @@ public class Loading extends Scene {
   public class Difficulty extends Scene
   {
     private int EASY = 1;
-    private int MEDIUM = 5;
-    private int HARD = 10;
+    private int MEDIUM = 3;
+    private int HARD = 5;
     Button hardButton;
     Button mediumButton;
     Button easyButton;
+    PImage background;
     
     public Difficulty(){
+      background = loadImage("menubackground.png");
+      background.resize(width,height);
+      easyButton = new Button(width/3,height/3 + 200,5,height/15,null,"Easy");
+      mediumButton = new Button(width/3,height/3 + 100,5,height/15,null,"Medium");
+      hardButton = new Button(width/3,height/3,5,height/15,null,"Hard");
     }
     
     public void click()
@@ -234,13 +240,14 @@ public class Loading extends Scene {
     }
     public void display()
     {
-      background(0);
+      
+      easyButton.display();
+      mediumButton.display();
+      hardButton.display();
       fill(255);
       stroke(255);
       textSize(50);
-      easyButton = new Button(width/3,height/3 + 200,5,height/15,null,"Easy");
-      mediumButton = new Button(width/3,height/3 + 100,5,height/15,null,"Medium");
-      hardButton = new Button(width/3,height/3,5,height/15,null,"Hard");
+      
     }
   }
    

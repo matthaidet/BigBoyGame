@@ -82,13 +82,38 @@ public class GameManager
     
     //Generate new Objects
     int chance = (int)random(0, SPAWN_CHANCE);
-    if( chance < 200 )
+    if( gameSpeed == 1 )
     {
-      generateObstacle();
+      if( chance < 25 )
+      {
+        generateObstacle();
+      }
+      else if ( chance > 998 )
+      {
+        generatePowerUp();
+      }
     }
-    else if ( chance > 975 )
+    else if( gameSpeed == 3 )
     {
-      generatePowerUp();
+      if( chance < 75 )
+      {
+        generateObstacle();
+      }
+      else if ( chance > 995 )
+      {
+        generatePowerUp();
+      }
+    }
+    else if( gameSpeed == 5 )
+    {
+     if( chance < 125 )
+      {
+        generateObstacle();
+      }
+      else if ( chance > 992 )
+      {
+        generatePowerUp();
+      } 
     }
     }
     

@@ -1,6 +1,6 @@
 public class LifeUp extends AbstractObstacle
 {
-  private final PImage pic = loadImage("topac.png");
+  private final PImage pic = loadImage("HEART.png");
   private int speed;
   /**
    * Constructs a new Wall object
