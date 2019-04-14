@@ -14,6 +14,7 @@ public class GameManager
   private static final int SPAWN_CHANCE = 1000;
   
   private Player p;
+  private BackgroundDrawer backgroundDrawer;
   
   ArrayList<Obstacle>[] obstacles;
   /*
@@ -30,6 +31,7 @@ public class GameManager
   public GameManager()
   {
      p = new Player();
+     backgroundDrawer = new BackgroundDrawer();
      
      obstacles = new ArrayList[NUM_LEVELS];
      
@@ -42,8 +44,6 @@ public class GameManager
   public void updateGame(){
     //Moves the player
     p.step();
-    p.display();
-    //Draws all the objects
     drawAll();
     //Check if objects are off screen and remove them
     for(int i = 0; i < NUM_LEVELS; i++)
@@ -85,8 +85,9 @@ public class GameManager
    */
   public void drawAll()
   {
+    backgroundDrawer.display();
     p.display();
-    
+  
     for(int i = 0; i < NUM_LEVELS; i++)
     {
        for(int j = 0; i < obstacles[i].size(); j++)
