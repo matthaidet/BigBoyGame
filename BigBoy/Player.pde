@@ -23,7 +23,7 @@ public class Player{
   PImage fallingImg;
   int animation_timer;
  
-  private final int TILE_HEIGHT = height/10;
+  private final int TILE_HEIGHT = height/7;
   public static final int START_LIFE = 3;
   public static final int PLAYER_X = 100;
   public static final int START_Y = 200;
