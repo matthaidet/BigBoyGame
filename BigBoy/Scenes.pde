@@ -12,10 +12,15 @@ public abstract class Scene {
 
 public class Game extends Scene{
   
-  Player player = new Player();
+  GameManager manager;
+  
+  
+  public Game(){
+   manager = new GameManager(); 
+  }
   
   public void display(){
-    player.step();
+    manager.updateGame();
   }
   
   public void click(){
@@ -24,15 +29,7 @@ public class Game extends Scene{
   
   //Control logic
   public void keyPress(){
-    switch(key){
-     case 'w':
-       player.jump();
-     break;
-     
-     case 's':
-       player.drop();
-     break;
-    }
+    manager.handlePress();
   }
   
 }
