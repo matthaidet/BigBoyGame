@@ -80,11 +80,11 @@ public class GameManager
     
     //Generate new Objects
     int chance = (int)random(0, SPAWN_CHANCE);
-    if( chance < 25 )
+    if( chance < 200 )
     {
       generateObstacle();
     }
-    else if ( chance > 995 )
+    else if ( chance > 975 )
     {
       generatePowerUp();
     }
