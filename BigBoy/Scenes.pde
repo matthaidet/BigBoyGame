@@ -154,3 +154,46 @@ public class EndScene extends Scene {
   }
   
 }
+
+
+public class Loading extends Scene {
+ 
+  PImage shrek;
+  int rotation;
+  
+  public Loading(){
+    shrek = loadImage("plane.png");
+  }
+  
+  public void display(){
+     background(0);
+     fill(255);
+     stroke(255);
+     textSize(100);
+     text("Loading...", width/2-400, height*.25);
+     shrek.resize(500,500);
+     
+     translate(-300, -300);
+     rotate(radians(frameCount*2));
+     image(shrek, width/2, height/2);
+     
+     rotation++;
+     
+     if(rotation>360){
+        rotation = 0; 
+     }
+     
+     if(music!=null){
+         currentScene = new Menu();
+     }
+  }
+  
+  public void click(){
+    
+  }
+  
+  public void keyPress(){
+    
+  }
+  
+}

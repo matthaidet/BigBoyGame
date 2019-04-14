@@ -14,8 +14,14 @@ void setup(){
   size(1920, 1080);
   //fullScreen();
   assets = new AssetManager();
-  currentScene = new Menu();
-  
+  thread("load");
+  currentScene = new Loading();
+}
+
+void load(){
+  music = new SoundFile(this, "Mega.mp3");
+  music.amp(1);
+  music.loop(); 
 }
 
 // Main game loop
