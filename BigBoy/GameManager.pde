@@ -62,7 +62,7 @@ public class GameManager
        for(int j = 0; j < obstacles[i].size(); j++)
        {
          Obstacle o = obstacles[i].get(j);
-          if( o.checkCollision(PLAYER_X) ){
+          if( o != null && o.checkCollision(PLAYER_X) ){
             if( p.onCollision() ){
               currentScene = new EndScene();
             } else{
