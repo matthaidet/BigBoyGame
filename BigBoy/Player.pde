@@ -127,5 +127,18 @@ public class Player{
     }
     
   }
+  /**
+  *Returns true if player is dead
+  *Reduces health otherwise
+  */
+  public boolean onCollision()
+  {
+   if( life == 1 ){
+     return true; 
+   } else{
+      life--;
+      return false;
+    }
+  }
   
 }
