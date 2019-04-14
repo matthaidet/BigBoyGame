@@ -28,7 +28,9 @@ public class Wall extends AbstractObstacle
   
   public void display()
   {
-      
+     PImage w = loadImage("car.png");
+     
+     image(w, x, FLOOR_HEIGHTS[getLevel()], 100, 100);
   }
   
   

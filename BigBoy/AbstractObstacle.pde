@@ -11,6 +11,13 @@ public abstract class AbstractObstacle implements Obstacle
   private final int START_X = width + 50;
   private static final int STEP_AMOUNT = 10;
   
+  public static final int tileheight = 0;
+  private final int TILE_HEIGHT = height/10;
+  private final int FLOOR_2 = TILE_HEIGHT;
+  private final int FLOOR_1 = TILE_HEIGHT*3;
+  private final int FLOOR_0 = TILE_HEIGHT*6;
+  public final int[] FLOOR_HEIGHTS = { FLOOR_0, FLOOR_1, FLOOR_2 };
+  
   /**
    * Constructs a new AbstractObstacle object
    *
