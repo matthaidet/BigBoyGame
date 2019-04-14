@@ -182,7 +182,6 @@ public class Player
         }
       } else {
           fall();
-        }
       } 
     } 
     
@@ -203,7 +202,7 @@ public class Player
       {
         return true; 
       } 
-    } else
+      else
       {
         life--; 
       }
