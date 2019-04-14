@@ -121,9 +121,12 @@ public class Menu extends Scene{
     
     }
   
-  
 }
 
+/**
+ Game over scene
+ gives button to return to menu
+*/
 public class EndScene extends Scene {
  
   Button menuButton;
@@ -136,7 +139,7 @@ public class EndScene extends Scene {
       fill(255);
      stroke(255);
      textSize(100);
-     text("GAME OVER.", width/2-600, height*.25);
+     text("GAME OVER.", width/2-400, height*.25);
      menuButton.display();
   }
   

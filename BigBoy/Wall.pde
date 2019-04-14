@@ -7,6 +7,7 @@
  */
 public class Wall extends AbstractObstacle
 {
+
   public static final int X_STEP = 10;
   
   private final PImage car = loadImage("car.png");
@@ -18,15 +19,22 @@ public class Wall extends AbstractObstacle
   public Wall(int level)
   {
    super(level);
+
+
   }
   
   public void stepX()
   {
+
+
     setX(getX() - X_STEP);
+
   }
   
   public void display()
   { 
+
+
     if(getLevel() == 0)
     {
       image(drill, getX(), FLOOR_HEIGHTS[getLevel()], 100, 100);
