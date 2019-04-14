@@ -9,7 +9,7 @@ public class Wall extends AbstractObstacle
 {
 
   public static final int X_STEP = 10;
-   
+
   /**
    * Constructs a new Wall object
    */
@@ -42,7 +42,6 @@ public class Wall extends AbstractObstacle
     }
     else
     {
-      // Place holder for airplane
       image(assets.getPlane(), getX(), FLOOR_HEIGHTS[getLevel()], 100, 100);
     }
      

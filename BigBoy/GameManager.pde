@@ -11,7 +11,7 @@ public class GameManager
   private static final int ARRAY_CAPACITY = 15;
   private static final int NUM_LEVELS = 3;
   private static final int PLAYER_X = 50;
-  private static final int SPAWN_CHANCE = 100;
+  private static final int SPAWN_CHANCE = 1000;
   
   private Player p;
   private BackgroundDrawer backgroundDrawer;
@@ -77,11 +77,11 @@ public class GameManager
 
     //Generate new Objects
     int chance = (int)random(0, SPAWN_CHANCE);
-    if( chance < 5 )
+    if( chance < 25 )
     {
       generateObstacle();
     }
-    else if ( chance > 98 )
+    else if ( chance > 995 )
     {
       generatePowerUp();
     }
@@ -95,6 +95,7 @@ public class GameManager
   public void drawAll()
   {
     backgroundDrawer.display();
+    //p.setState(Animation_State.RUN);
     p.display();
   
     for(int i = 0; i < NUM_LEVELS; i++)

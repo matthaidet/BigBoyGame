@@ -89,7 +89,9 @@ public class Player
      notJump = false;
      yVel = JUMP_VELOCITY;
      yAcc = ACCELERATION;
-   }  
+     
+     display();
+   }
   }
   
   public void drop()
@@ -102,7 +104,11 @@ public class Player
       yVel = -JUMP_VELOCITY;
       yAcc = ACCELERATION;
       notFall = false;
+      
+      display();
     }
+    
+    
   }
   
   
@@ -151,6 +157,7 @@ public class Player
           fall();
         }
       }
+
     }
     
     
@@ -192,6 +199,7 @@ public class Player
         }
       } 
     } 
+    
   }
   /**
   *Returns true if player is dead
@@ -211,6 +219,11 @@ public class Player
   public int getLevel()
   {
     return level;
+  }
+  
+  public void setState(Animation_State s)
+  {
+    state = s;
   }
   
 }
