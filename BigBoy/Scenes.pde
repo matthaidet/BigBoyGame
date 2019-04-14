@@ -5,6 +5,8 @@ public abstract class Scene {
   
   public abstract void click();
   
+  public abstract void keyPress();
+  
  }
 
 
@@ -15,6 +17,10 @@ public class Game extends Scene{
   }
   
   public void click(){
+    
+  }
+  
+  public void keyPress(){
     
   }
   
@@ -40,6 +46,10 @@ public class Help extends Scene{
     if(menuButton.isHovered()){
      currentScene = new Menu(); 
     }
+  }
+  
+    public void keyPress(){
+    
   }
   
 }
@@ -95,6 +105,10 @@ public class Menu extends Scene{
      helpButton.display();
   }
   
+    public void keyPress(){
+    
+  }
+  
   
 }
 
@@ -105,6 +119,10 @@ public class EndScene extends Scene {
   }
   
   public void click(){
+    
+  }
+  
+    public void keyPress(){
     
   }
   

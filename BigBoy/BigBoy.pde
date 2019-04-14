@@ -22,3 +22,7 @@ void draw(){
 void mouseClicked(){
  currentScene.click(); 
 }
+
+void keyPressed(){
+ currentScene.keyPress(); 
+}
