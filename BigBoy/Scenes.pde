@@ -43,6 +43,7 @@ public class Help extends Scene{
   }
   
   public void display(){
+     background(0);
      fill(255);
      stroke(255);
      textSize(75);
