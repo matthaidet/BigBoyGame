@@ -4,11 +4,13 @@
   2019
 */
 Scene currentScene;
+AssetManager assets;
 
 void setup(){
   background(0);
   size(1920, 1080);
   //fullScreen();
+  assets = new AssetManager();
   currentScene = new Menu();
 }
 

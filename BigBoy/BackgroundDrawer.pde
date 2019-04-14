@@ -18,7 +18,7 @@ public class BackgroundDrawer{
     public TileRoll(PImage img, int y){
       size = ceil(width/TILE_SIZE)+2;
       tile = img;
-      tile.resize(TILE_SIZE+10,height);
+      tile.resize(TILE_SIZE+15,height);
       tiles = new float[size];
       this.y = y;
       for(int i = 0; i < size; i++){
