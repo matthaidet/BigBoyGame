@@ -7,11 +7,7 @@
  */
 public class Wall extends AbstractObstacle
 {
-<<<<<<< HEAD
-  
-  PImage w;
-=======
->>>>>>> 8dd2fb37b89d287916fc463e2e26a49bfc1c71ec
+
   public static final int X_STEP = 10;
   
   private final PImage car = loadImage("car.png");
@@ -23,27 +19,22 @@ public class Wall extends AbstractObstacle
   public Wall(int level)
   {
    super(level);
-<<<<<<< HEAD
-   super.x = width; 
-    w = loadImage("car.png");
-=======
->>>>>>> 8dd2fb37b89d287916fc463e2e26a49bfc1c71ec
+
+
   }
   
   public void stepX()
   {
-<<<<<<< HEAD
-    super.x -= X_STEP;
-=======
+
+
     setX(getX() - X_STEP);
->>>>>>> 8dd2fb37b89d287916fc463e2e26a49bfc1c71ec
+
   }
   
   public void display()
   { 
-<<<<<<< HEAD
-     image(w, super.x, FLOOR_HEIGHTS[getLevel()], 100, 100);
-=======
+
+
     if(getLevel() == 0)
     {
       image(drill, getX(), FLOOR_HEIGHTS[getLevel()], 100, 100);
@@ -58,7 +49,6 @@ public class Wall extends AbstractObstacle
       image(car, getX(), FLOOR_HEIGHTS[getLevel()], 100, 100);
     }
      
->>>>>>> 8dd2fb37b89d287916fc463e2e26a49bfc1c71ec
   }
   
   
