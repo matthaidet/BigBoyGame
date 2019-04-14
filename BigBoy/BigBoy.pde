@@ -8,6 +8,8 @@ import processing.sound.*;
 Scene currentScene;
 AssetManager assets;
 SoundFile music;
+SoundFile ow;
+SoundFile yes;
 
 
 
@@ -23,7 +25,10 @@ void setup(){
 
 void load(){
   music = new SoundFile(this, "Mega.mp3");
-  music.amp(1);
+  ow = new SoundFile(this, "ow.mp3");
+  yes = new SoundFile(this, "yes.mp3");
+  yes.amp(1);
+  music.amp(.5);
   music.loop(); 
 }
 

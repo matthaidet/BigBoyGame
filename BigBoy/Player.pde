@@ -1,3 +1,4 @@
+import processing.sound.*;
 
 enum Animation_State {
    RUN,
@@ -5,6 +6,8 @@ enum Animation_State {
    FALL,
    DEATH
 }
+
+
 
 public class Player 
 {
@@ -207,18 +210,21 @@ public class Player
     }
     if(o instanceof Wall)
     {
+      ow.play();
       if( life == 1 )
       {
         return true; 
       } 
       else
       {
+        
         life--; 
       }
 
     }
    else if(o instanceof LifeUp)
    {
+     yes.play();
      if(life < START_LIFE)
      {
        life++;
