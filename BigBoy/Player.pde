@@ -207,6 +207,10 @@ public class Player
   */
   public boolean onCollision(Obstacle o)
   {
+    if( notJump == false || notFall == false )
+    {
+      return false;
+    }
     if(o instanceof Wall)
     {
       if( life == 1 )
