@@ -25,12 +25,12 @@ public class Player{
  
   public static final int START_LIFE = 3;
   public static final int PLAYER_X = 50;
-  public static final int START_Y = 100;
-  public static final int JUMP_VELOCITY = 10;
-  public static final int ACCELERATION = -1;
-  public static final int FLOOR_2 = 300;
+  public static final int START_Y = 200;
+  public static final int JUMP_VELOCITY = -10;
+  public static final int ACCELERATION = 1;
+  public static final int FLOOR_2 = 100;
   public static final int FLOOR_1 = 200;
-  public static final int FLOOR_0 = 100;
+  public static final int FLOOR_0 = 300;
   
   public Player()
   {
@@ -96,7 +96,7 @@ public class Player{
     int yTemp = y + yVel;
     if( level == 0 )
     {
-      if( yTemp <= FLOOR_0 )
+      if( yTemp >= FLOOR_0 )
       {
         yAcc = 0;
         yVel = 0;
@@ -105,7 +105,7 @@ public class Player{
       }
     } else if( level == 1 ) 
     {
-      if( yTemp <= FLOOR_1 )
+      if( yTemp >= FLOOR_1 )
       {
         yAcc = 0;
         yVel = 0;
@@ -114,7 +114,7 @@ public class Player{
       }
     } else if( level == 2 )
     {
-      if( yTemp <= FLOOR_2 )
+      if( yTemp >= FLOOR_2 )
       {
         yAcc = 0;
         yVel = 0;
